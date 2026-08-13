@@ -78,18 +78,16 @@ export default function Cart() {
               ))}
 
               <tr>
-                <td colSpan={6}>
-                  <strong>Total</strong>
+                <td colSpan={6} style={{textAlign:"right"}}>
+                  <strong>Total : </strong>
                 </td>
-                <td style={{ textAlign: "right" }}>
+                <td style={{ textAlign: "center" }}>
                   <strong>${total.toFixed(2)}</strong>
                 </td>
-                <td></td>
               </tr>
             </tbody>
           </Table>
 
-          {/* Checkout Button */}
           <Button
             component={Link}
             to="/checkout"

@@ -4,16 +4,19 @@ type CartItem = { id: number; title: string; price: number; image: string; quant
 
 type CartContextType = {
   cart: CartItem[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   addToCart: (item: any) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const addToCart = (item: any) => {
     setCart((prev) => {
       const existing = prev.find((p) => p.id === item.id);

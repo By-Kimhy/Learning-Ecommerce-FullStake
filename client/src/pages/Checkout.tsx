@@ -40,7 +40,6 @@ export default function Checkout() {
         Checkout
       </Title>
 
-      {/* Order Summary */}
       <Paper shadow="xs" p="md" mb="xl">
         <Title order={4} mb="sm">
           Order Summary
@@ -67,8 +66,8 @@ export default function Checkout() {
                 </tr>
               ))}
               <tr>
-                <td colSpan={2}>
-                  <strong>Total</strong>
+                <td colSpan={3} style={{textAlign:"right"}}>
+                  <strong>Total :</strong>
                 </td>
                 <td style={{ textAlign: "right" }}>
                   <strong>${total.toFixed(2)}</strong>

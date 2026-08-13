@@ -43,7 +43,7 @@ export default function Login() {
 
   return (
     <Container size="sm" mt="xl">
-      <Paper shadow="xs" p="md" radius="md" withBorder>
+      <Paper shadow="lg" p="md" radius="md" withBorder>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="email"
