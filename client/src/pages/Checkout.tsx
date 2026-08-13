@@ -51,24 +51,26 @@ export default function Checkout() {
           <Table>
             <thead>
               <tr>
+                <th>No</th>
                 <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
+                <th style={{ textAlign: "right" }}>Qty</th>
+                <th style={{ textAlign: "right" }}>Price</th>
               </tr>
             </thead>
             <tbody>
-              {cart.map((item) => (
+              {cart.map((item,i) => (
                 <tr key={item.id}>
-                  <td>{item.title}</td>
-                  <td>{item.quantity}</td>
-                  <td>${item.price}</td>
+                  <td style={{ textAlign: "center" }}>{i+1}</td>
+                  <td style={{paddingLeft:"10px"}}>{item.title}</td>
+                  <td style={{ textAlign: "right" }}>{item.quantity}</td>
+                  <td style={{ textAlign: "right" }}>${item.price.toFixed(2)}</td>
                 </tr>
               ))}
               <tr>
                 <td colSpan={2}>
                   <strong>Total</strong>
                 </td>
-                <td>
+                <td style={{ textAlign: "right" }}>
                   <strong>${total.toFixed(2)}</strong>
                 </td>
               </tr>

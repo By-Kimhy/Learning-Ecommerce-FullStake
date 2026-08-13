@@ -28,6 +28,7 @@ export default function Cart() {
           <Table highlightOnHover withColumnBorders>
             <thead>
               <tr>
+                <th>No</th>
                 <th style={{ width: "10%" }}>Image</th>
                 <th style={{ width: "35%" }}>Product Title</th>
                 <th style={{ width: "10%" }}>Qty</th>
@@ -37,8 +38,9 @@ export default function Cart() {
               </tr>
             </thead>
             <tbody>
-              {cart.map((item) => (
+              {cart.map((item,i) => (
                 <tr key={item.id}>
+                  <td style={{ textAlign: "center" }}>{i+1}</td>
                   <td>
                     <Image
                       src={item.image}
@@ -76,9 +78,8 @@ export default function Cart() {
                 </tr>
               ))}
 
-              <Divider />
               <tr>
-                <td colSpan={5}>
+                <td colSpan={6}>
                   <strong>Total</strong>
                 </td>
                 <td style={{ textAlign: "right" }}>

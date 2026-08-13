@@ -28,9 +28,15 @@ export default function Register() {
   } = useForm<RegisterFormValues>();
 
   const onSubmit = (data: RegisterFormValues) => {
+    // Save user data to localStorage (⚠️ avoid storing password in real apps)
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name: data.name, email: data.email })
+    );
+
     // Normally you'd call backend API here
     login({ name: data.name, email: data.email });
-    navigate("/"); // redirect to home after register
+    navigate("/login");
   };
 
   return (
