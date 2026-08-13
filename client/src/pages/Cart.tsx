@@ -7,7 +7,6 @@ import {
   Text,
   Image,
   Table,
-  Divider,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
 
