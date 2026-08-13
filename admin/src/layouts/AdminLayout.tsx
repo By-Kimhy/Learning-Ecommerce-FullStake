@@ -1,6 +1,6 @@
-import { Sidebar } from "@/components/ui/sidebar";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
+import { Sidebar } from "../components/ui/sidebar";
+import { Separator } from "../components/ui/separator";
+import { Button } from "../components/ui/button";
 import { Outlet, NavLink } from "react-router-dom";
 
 export default function AdminLayout() {

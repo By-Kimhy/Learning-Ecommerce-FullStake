@@ -25,7 +25,6 @@ export default function ProductCard({ product }: { product: any }) {
         ${product.price}
       </Text>
 
-
       <Card.Section inheritPadding pb="md">
         <Group justify="space-between">
           <Button
