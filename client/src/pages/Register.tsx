@@ -8,7 +8,6 @@ import {
   Paper,
   Group,
 } from "@mantine/core";
-import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 type RegisterFormValues = {
@@ -18,7 +17,6 @@ type RegisterFormValues = {
 };
 
 export default function Register() {
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const {
@@ -28,14 +26,10 @@ export default function Register() {
   } = useForm<RegisterFormValues>();
 
   const onSubmit = (data: RegisterFormValues) => {
-    // Save user data to localStorage (⚠️ avoid storing password in real apps)
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ name: data.name, email: data.email })
-    );
+    // Save full user data including password
+    localStorage.setItem("user", JSON.stringify(data));
 
-    // Normally you'd call backend API here
-    login({ name: data.name, email: data.email });
+    // Redirect to login page (no auto-login)
     navigate("/login");
   };
 

@@ -26,8 +26,19 @@ export default function Login() {
   } = useForm<LoginFormValues>();
 
   const onSubmit = (data: LoginFormValues) => {
-    login({ name: "Demo User", email: data.email });
-    navigate("/");
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+
+      if (user.email === data.email && user.password === data.password) {
+        login({ name: user.name, email: user.email });
+        navigate("/");
+      } else {
+        alert("Invalid email or password");
+      }
+    } else {
+      alert("No registered account found. Please register first.");
+    }
   };
 
   return (
